@@ -1,0 +1,116 @@
+$bgColor: #f8f8f8;
+$lightenedBgColor: #ffffff;
+$textColor: #c5c6cb;
+$fontSize: 18px;
+$hoverTextColor: #6984dd;
+$hoverBgColor: #f2f4ff;
+$borderColor: #eeeeee;
+$selectResultsHeight: 13rem;
+body {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  box-sizing: border-box;
+  background-color: $bgColor;
+}
+.container {
+  width: 30%;
+  margin: 5rem auto;
+}
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 15px;
+  border: $textColor solid 3px;
+  border-radius: 7px;
+  cursor: pointer;
+  background-color: $lightenedBgColor;
+}
+.selector > input {
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: 80%;
+  font-size: 1rem;
+}
+
+.selector .arrow {
+  color: $textColor;
+  font-size: 1.5rem;
+}
+.select-result-container {
+  padding: 7px 4px;
+  margin-top: 5px;
+  border: $textColor solid 1px;
+  border-radius: 15px;
+
+  background-color: $lightenedBgColor;
+}
+.select-result {
+  padding: 5px 10px;
+  overflow-y: auto;
+  height: $selectResultsHeight;
+}
+.select-result::-webkit-scrollbar {
+  width: 5px;
+}
+.select-result::-webkit-scrollbar-track {
+  margin-right: 3px;
+}
+
+.select-result::-webkit-scrollbar-thumb {
+  background: $textColor;
+  height: 1rem !important;
+  width: 5px;
+  border-radius: 7px;
+  margin-right: 3px;
+}
+.select-result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 8px;
+  height: 32px;
+  border-radius: 10px;
+}
+.select-result-item.active {
+  color: $hoverTextColor;
+}
+.select-result-item:hover {
+  background-color: $hoverBgColor;
+}
+.select-result-item > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  cursor: default;
+  font-weight: 500;
+}
+.select-result-item:hover > div:first-child {
+  color: $hoverTextColor;
+}
+.select-result-item > .check-mark {
+  color: $textColor;
+  font-weight: 800;
+  font-size: 1.4rem;
+}
+.select-result-item.active > .check-mark {
+  color: $hoverTextColor;
+}
+@media only screen and (max-width: 1024px) {
+  .container {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+}

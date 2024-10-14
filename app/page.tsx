@@ -1,4 +1,12 @@
-import Image from "next/image";
+import Select from "@/components/Select";
+import SelectorProvider from "@/context/SelectorProvider";
+
 export default function Home() {
-  return <div className="border border-red-600">Home</div>;
+  return (
+    <SelectorProvider>
+      <div className="container">
+        <Select />
+      </div>
+    </SelectorProvider>
+  );
 }
